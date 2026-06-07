@@ -50,7 +50,6 @@ nook/
 ├── install.sql
 ├── README.md
 ├── README_RU.md
-├── README_EN.md
 ├── assets/
 │   ├── app.js
 │   ├── style.css
