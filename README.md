@@ -3,7 +3,7 @@
 **Nook** is a small self-hosted **PHP + MySQL** web app for a personal archive of photos, videos, and text notes.
 
 <p align="center">
-  <img src="screenshot.png" alt="Nook main window" width="900">
+  <img src="screenshot.jpg" alt="Nook main window" width="900">
 </p>
 
 No Docker, no frameworks, no build step. A regular PHP-enabled web server and MySQL/MariaDB are enough.
