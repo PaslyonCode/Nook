@@ -1,4 +1,5 @@
 # Nook
+<img width="900" height="400" alt="image" src="https://github.com/user-attachments/assets/90521a35-bbcc-42f2-bf87-023749ac53c7" />
 
 Nook is a self-hosted storage application for photos, video, PDF documents, STL models and notes. It uses PHP with MySQL/MariaDB. Physical files live in a server folder selected by the administrator; the database stores cards, metadata, tags and settings.
 
