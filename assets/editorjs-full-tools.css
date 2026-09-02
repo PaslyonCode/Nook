@@ -1,0 +1,31 @@
+/* Full local Editor.js integration for Nook */
+/* Keep Editor.js native toolbar geometry intact. The toolbar actions live to the left
+   of .ce-toolbar__content, so stretching that content to 100% clips the native + button
+   inside Nook's scrollable modal. */
+.note-window .codex-editor{position:relative!important;overflow:visible!important;min-height:280px!important}
+.note-window .codex-editor__redactor{padding-bottom:140px!important;min-height:280px!important}
+.note-window .ce-block__content,.note-window .ce-toolbar__content{
+  max-width:min(760px,calc(100% - 112px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.note-window .ce-toolbar__actions{z-index:20060!important}
+.ce-toolbar,.ce-inline-toolbar,.ce-popover,.ce-settings{z-index:20050!important}
+.ce-inline-toolbar,.ce-popover{box-shadow:0 12px 36px rgba(0,0,0,.18)!important}
+.ce-inline-tool,.ce-popover-item{cursor:pointer}
+.nook-ej-full-header{font-weight:750;line-height:1.18;margin:.1em 0;outline:none}.nook-ej-full-header[data-level="1"]{font-size:2.05em}.nook-ej-full-header[data-level="2"]{font-size:1.72em}.nook-ej-full-header[data-level="3"]{font-size:1.42em}.nook-ej-full-header[data-level="4"]{font-size:1.22em}.nook-ej-full-header[data-level="5"]{font-size:1.08em}.nook-ej-full-header[data-level="6"]{font-size:.98em;text-transform:uppercase;letter-spacing:.04em}
+.nook-ej-full-list{margin:.35em 0;padding-left:1.7em}.nook-ej-full-list li{padding:.16em 0;outline:none}
+.nook-ej-full-checklist{display:grid;gap:.5em}.nook-ej-full-check-row{display:grid;grid-template-columns:22px minmax(0,1fr);gap:.55em;align-items:start}.nook-ej-full-check-row input{margin-top:.35em}.nook-ej-full-check-row span{outline:none;min-height:1.45em}
+.nook-ej-full-quote{margin:.5em 0;padding:.7em 1em;border-left:4px solid currentColor;opacity:.95}.nook-ej-full-quote[data-alignment="center"]{text-align:center;border-left:0;border-top:1px solid rgba(127,127,127,.35);border-bottom:1px solid rgba(127,127,127,.35)}.nook-ej-full-quote-text{font-size:1.1em;font-style:italic;outline:none}.nook-ej-full-quote-caption{margin-top:.45em;font-size:.86em;opacity:.65;outline:none}
+.nook-ej-full-warning{padding:.85em 1em;border:1px solid rgba(180,130,30,.35);border-radius:10px;background:rgba(255,190,50,.08)}.nook-ej-full-warning-title{font-weight:700;outline:none}.nook-ej-full-warning-message{margin-top:.35em;outline:none}.nook-ej-full-warning [data-placeholder]:empty:before,.nook-ej-full-embed-caption:empty:before,.nook-ej-full-quote-caption:empty:before{content:attr(data-placeholder);opacity:.4;pointer-events:none}
+.nook-ej-full-delimiter{display:flex;justify-content:center;gap:10px;padding:18px 0}.nook-ej-full-delimiter span{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5}
+.nook-ej-full-table-wrap{overflow:auto;margin:.4em 0}.nook-ej-full-table-wrap[data-stretched="1"]{width:calc(100% + 60px);margin-left:-30px}.nook-ej-full-table{border-collapse:collapse;width:100%;min-width:420px}.nook-ej-full-table td,.nook-ej-full-table th{border:1px solid rgba(127,127,127,.32);padding:.52em .62em;min-width:90px;outline:none;vertical-align:top}.nook-ej-full-table th{font-weight:700;background:rgba(127,127,127,.09)}
+.nook-ej-full-code,.nook-ej-full-raw{display:block;width:100%;min-height:170px;resize:vertical;border:1px solid rgba(127,127,127,.28);border-radius:9px;padding:12px 14px;background:rgba(127,127,127,.07);color:inherit;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;tab-size:4;outline:none}.nook-ej-full-raw{min-height:140px}
+.nook-ej-full-embed{display:grid;gap:10px}.nook-ej-full-embed-input{width:100%;box-sizing:border-box;border:1px solid rgba(127,127,127,.28);border-radius:8px;padding:10px 12px;background:transparent;color:inherit}.nook-ej-full-embed-preview{position:relative;width:100%;aspect-ratio:16/9;background:rgba(127,127,127,.08);border-radius:10px;overflow:hidden}.nook-ej-full-embed-preview:empty{display:none}.nook-ej-full-embed-preview iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.nook-ej-full-embed-caption{text-align:center;font-size:.86em;opacity:.72;outline:none}
+.cdx-marker{background:rgba(255,224,90,.65);padding:0 .08em}.inline-code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;background:rgba(127,127,127,.12);border-radius:4px;padding:.08em .3em}
+/* Make the plus button and tool menus easy to reach inside Nook's modal. */
+.note-window .ce-toolbar--opened .ce-toolbar__plus,.note-window .ce-toolbar--opened .ce-toolbar__settings-btn{opacity:1!important;visibility:visible!important}
+@media(max-width:720px){
+  .note-window .ce-block__content,.note-window .ce-toolbar__content{max-width:calc(100% - 28px)!important}
+  .nook-ej-full-table-wrap[data-stretched="1"]{width:100%;margin-left:0}
+}

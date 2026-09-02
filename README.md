@@ -1,117 +1,74 @@
 # Nook
 
-**Nook** is a small self-hosted **PHP + MySQL** web app for a personal archive of photos, videos, and text notes.
+Nook is a self-hosted storage application for photos, video, PDF documents, STL models and notes. It uses PHP with MySQL/MariaDB. Physical files live in a server folder selected by the administrator; the database stores cards, metadata, tags and settings.
 
-<p align="center">
-  <img src="screenshot.jpg" alt="Nook main window" width="900">
-</p>
+Russian documentation: [README_RU.md](README_RU.md).
 
-No Docker, no frameworks, no build step. A regular PHP-enabled web server and MySQL/MariaDB are enough.
+## Included in this build
 
-## Features
+- Photos, video, PDF, STL and notes.
+- Local Editor.js assets and the full tool bundle under `assets/vendor/editorjs` and `assets/editorjs-full-tools.*`; no runtime CDN is required.
+- Multiple virtual Nooks sharing one physical storage root.
+- Create, rename and delete Nooks from the Nook list, with dedicated edit/delete controls on every row.
+- Optional per-Nook passwords and remembered unlock access.
+- Privacy-aware reload behavior: an unprotected Nook stays selected, while reloading from a protected Nook opens the configured default Nook without revoking the existing unlock.
+- Search, type/date filters and a hashtag sidebar.
+- Masonry-style card layout without large row gaps.
+- Pinning, quick card actions and bulk operations.
+- Moving cards between Nooks.
+- File picker, drag-and-drop and Ctrl+V uploads.
+- Immediate background save for new media cards and periodic note autosave.
+- Photo, video, PDF and STL viewing.
+- Previous/next navigation inside an open card using on-screen arrows or Left/Right. Escape closes only the file viewer and leaves the card open.
+- Trash, restore and permanent cleanup.
+- Export/import with storage integrity checks.
+- Explicit publishing of selected entries to a separate minimal public frontend.
 
-- photo and video uploads;
-- multiple media files grouped into one entry;
-- text notes;
-- locally bundled Editor.js;
-- image insertion inside notes;
-- simple image resizing inside notes: `25%`, `50%`, `75%`, `100%`;
-- hashtags;
-- search by title, description, note body, filenames, and hashtags;
-- date filters;
-- hidden entries: searchable, but not shown in the default feed;
-- trash bin;
-- restore from trash;
-- empty trash with physical file deletion;
-- username/password authentication;
-- interface language switch: Russian / English;
-- local SVG logo and favicon.
+Drag-reordering media inside a card is intentionally not included.
 
 ## Requirements
 
-Recommended minimum:
+- PHP 8.1 or newer;
+- MySQL 5.7+/8.x or MariaDB 10.4+;
+- PHP extensions: `pdo_mysql`, `gd`, `zip`, `fileinfo`, `mbstring`, `session`;
+- Apache/Nginx, or Laragon for a local Windows installation;
+- a storage directory outside the web root that PHP can read and write.
 
-- Linux server or local machine;
-- Apache or Nginx;
-- PHP 8.1+;
-- MySQL 5.7+ or MariaDB 10.3+;
-- PHP extensions: `pdo_mysql`, `gd`, `mbstring`, `fileinfo`.
+For large uploads, also configure `upload_max_filesize`, `post_max_size`, PHP timeouts and the web server request-body limit.
 
-For Debian/Ubuntu with Apache:
+## Clean installation
 
-```bash
-sudo apt update
-sudo apt install apache2 mysql-server php php-mysql php-gd php-mbstring php-fileinfo unzip
-```
+### 1. Copy the project
 
-## Project structure
+Extract the `nook` directory under the web root, for example:
 
 ```text
-nook/
-├── index.php
-├── api.php
-├── config.php
-├── install.sql
-├── README.md
-├── README_RU.md
-├── assets/
-│   ├── app.js
-│   ├── style.css
-│   ├── logo.svg
-│   ├── favicon.svg
-│   └── vendor/editorjs/
-└── uploads/
-    ├── originals/
-    ├── thumbs/
-    └── note-images/
+C:\laragon\www\nook
 ```
 
-`uploads/originals` stores original photos and videos.  
-`uploads/thumbs` stores image thumbnails.  
-`uploads/note-images` stores images inserted into notes.
-
-Editor.js and its tools are bundled locally in `assets/vendor/editorjs/`, so the editor does not require CDN or internet access.
-
-The interface supports Russian and English. The selected language is stored in the browser via cookie/localStorage and does not require database changes.
-
-## Fresh installation
-
-Copy the project folder to your web server, for example:
-
-```bash
-sudo cp -r nook /var/www/html/nook
-```
-
-Create the database and tables:
-
-```bash
-mysql -u root -p < /var/www/html/nook/install.sql
-```
-
-By default, the database name is:
+or:
 
 ```text
-nook
+/var/www/html/nook
 ```
 
-Default credentials:
+### 2. Create the database
 
-```text
-login: admin
-password: admin123
+```sql
+CREATE DATABASE nook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-Change the password after the first login.
-
-## MySQL configuration
-
-Edit `config.php`:
+Import the single clean-install schema:
 
 ```bash
-sudo nano /var/www/html/nook/config.php
+mysql -u root -p nook < install.sql
 ```
 
-Check the connection settings:
+`install.sql` is only for a new, empty database. This release does not ship a separate `upgrade.sql`.
+
+### 3. Configure `config.php`
+
+Set the database connection:
 
 ```php
 const DB_HOST = 'localhost';
@@ -120,150 +77,115 @@ const DB_USER = 'root';
 const DB_PASS = '';
 ```
 
-To create a dedicated MySQL user:
+Replace `APP_SECRET` with a long random value as well.
 
-```sql
-CREATE USER 'nook_user'@'localhost' IDENTIFIED BY 'strong_password_here';
-GRANT ALL PRIVILEGES ON nook.* TO 'nook_user'@'localhost';
-FLUSH PRIVILEGES;
-```
+### 4. Sign in
 
-Then update `config.php`:
-
-```php
-const DB_USER = 'nook_user';
-const DB_PASS = 'strong_password_here';
-```
-
-## Upload directory permissions
-
-```bash
-sudo mkdir -p /var/www/html/nook/uploads/originals
-sudo mkdir -p /var/www/html/nook/uploads/thumbs
-sudo mkdir -p /var/www/html/nook/uploads/note-images
-sudo chown -R www-data:www-data /var/www/html/nook/uploads
-sudo chmod -R 775 /var/www/html/nook/uploads
-```
-
-If your web server uses a different user, replace `www-data` accordingly.
-
-## Upload limits
-
-The application-level single-file limit is defined in `config.php`:
-
-```php
-const MAX_UPLOAD_MB = 2048;
-```
-
-PHP and the web server must also allow large uploads.
-
-In `php.ini`:
-
-```ini
-file_uploads = On
-upload_max_filesize = 2048M
-post_max_size = 2200M
-max_file_uploads = 200
-max_input_time = 600
-max_execution_time = 600
-memory_limit = 1024M
-```
-
-Restart the web server after changing PHP settings.
-
-Apache:
-
-```bash
-sudo systemctl restart apache2
-```
-
-Nginx + PHP-FPM:
-
-```bash
-sudo systemctl restart php8.2-fpm
-sudo systemctl restart nginx
-```
-
-For Nginx, you may also need:
-
-```nginx
-client_max_body_size 2200M;
-```
-
-## Apache VirtualHost example
-
-```apache
-<VirtualHost *:80>
-    ServerName nook.local
-    DocumentRoot /var/www/html/nook
-
-    <Directory /var/www/html/nook>
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/nook_error.log
-    CustomLog ${APACHE_LOG_DIR}/nook_access.log combined
-</VirtualHost>
-```
-
-Enable it:
-
-```bash
-sudo a2ensite nook.conf
-sudo systemctl reload apache2
-```
-
-## Change admin password
-
-Generate a new hash:
-
-```bash
-php -r "echo password_hash('NEW_PASSWORD_HERE', PASSWORD_DEFAULT), PHP_EOL;"
-```
-
-Update the user:
-
-```sql
-USE nook;
-UPDATE users SET password_hash = 'PASTE_HASH_HERE' WHERE username = 'admin';
-```
-
-## Upgrading from older versions
-
-For a fresh installation, use only `install.sql`.
-
-Upgrade scripts for older working databases are included:
+Initial credentials:
 
 ```text
-upgrade_auth.sql
-upgrade_media.sql
-upgrade_notes_trash.sql
-upgrade_editorjs_real.sql
+username: admin
+password: admin123
 ```
 
-Always back up the database and the `uploads` folder before upgrading.
+Change both after the first sign-in.
 
-## Backup
+### 5. Configure the storage root
 
-Database:
+Create a dedicated directory such as:
 
-```bash
-mysqldump -u root -p nook > nook_backup.sql
+```text
+D:/NookStorage
 ```
 
-Files:
+or:
 
-```bash
-sudo tar -czf nook_uploads_backup.tar.gz /var/www/html/nook/uploads
+```text
+/srv/nook-storage
 ```
 
-You need both the database and the `uploads` folder for a full restore.
+Open Nook settings and enter its absolute path. PHP must be allowed to create directories and files there.
 
-## Notes
+## Updating an existing copy
 
-- Photos and videos are stored as files on the server.
-- Entries, notes, and hashtags are stored in MySQL.
-- Notes are stored both as Editor.js JSON and rendered HTML for search/display.
-- Delete moves entries to trash first.
-- Emptying the trash permanently deletes database records and related files.
+If the installed application is based on the source archive used for this release:
+
+1. Back up the database, storage root and current application files.
+2. Copy this release over the existing installation.
+3. Do not import `install.sql` into the live database.
+4. Hard-refresh the browser with Ctrl+F5.
+
+No extra `php apply...` command is required.
+
+## Project structure
+
+```text
+nook/
+├─ index.php                 private UI and sign-in page
+├─ api.php                   core authenticated API
+├─ ux_api.php                additional authenticated UI actions
+├─ ux_bootstrap.php          privacy-aware startup selection
+├─ public.php                public frontend
+├─ public_api.php            public read-only API
+├─ public_admin_api.php      publishing administration API
+├─ file.php                  private file delivery
+├─ public_file.php           published file delivery
+├─ bootstrap.php             database, session, access and storage helpers
+├─ config.php                instance configuration
+├─ install.sql               clean-install database schema
+├─ assets/                   JavaScript, CSS, SVG and local Editor.js files
+├─ lib/                      media and package helpers
+└─ tools/                    migration and storage repair utilities
+```
+
+`ux_api.php` is intentionally preserved as a separate endpoint. This release is based on the verified current project and does not restructure working code merely to reduce the number of files.
+
+## Storage layout
+
+Nook creates these directories below the configured storage root:
+
+```text
+files/
+previews/
+note-images/
+exports/
+imports/
+tmp/
+```
+
+Keep the storage root outside the public web root. Move both the database and the complete storage root when migrating an instance.
+
+## Editor.js
+
+The local Editor.js files are included in the release:
+
+```text
+assets/vendor/editorjs/editorjs.umd.js
+assets/vendor/editorjs/header.umd.js
+assets/vendor/editorjs/list.umd.js
+assets/vendor/editorjs/checklist.umd.js
+assets/vendor/editorjs/quote.umd.js
+assets/vendor/editorjs/delimiter.umd.js
+assets/vendor/editorjs/table.umd.js
+assets/vendor/editorjs/image.umd.js
+assets/vendor/editorjs/image-resizable.umd.js
+assets/editorjs-full-tools.js
+assets/editorjs-full-tools.css
+```
+
+Do not omit these files when uploading the project to a server or GitHub.
+
+## Public frontend
+
+Only explicitly published cards are exposed. Private files are served by `file.php`; public delivery uses the separate `public_file.php` endpoint, which verifies the card publication state.
+
+## Backups
+
+Before an update or import, save:
+
+- a MySQL/MariaDB dump;
+- the entire user storage root;
+- `config.php`;
+- the current application directory.
+
+Nook export is not a replacement for a server-level configuration and database backup.

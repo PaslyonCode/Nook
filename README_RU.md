@@ -1,114 +1,74 @@
 # Nook
 
-**Nook** — простое автономное веб-приложение на **PHP + MySQL** для личного архива фото, видео и текстовых заметок.
+Nook — self-hosted хранилище фотографий, видео, PDF, STL-моделей и заметок на PHP + MySQL/MariaDB. Файлы лежат в выбранной папке на сервере, а база хранит карточки, метаданные, хэштэги и настройки.
 
-Без Docker, без фреймворков, без сборщиков. Достаточно обычного веб-сервера с PHP и MySQL/MariaDB.
+English documentation: [README.md](README.md).
 
-## Возможности
+## Что входит в эту сборку
 
-- загрузка фото и видео;
-- загрузка нескольких файлов в одну медиа-группу;
-- текстовые заметки;
-- локально подключенный Editor.js;
-- вставка картинок внутрь заметок;
-- изменение размера картинок в заметках: `25%`, `50%`, `75%`, `100%`;
-- хэштэги;
-- поиск по заголовкам, описаниям, текстам заметок, именам файлов и хэштэгам;
-- фильтр по датам;
-- скрытые записи: доступны через поиск, но не видны в общем списке;
-- корзина;
-- восстановление записей из корзины;
-- очистка корзины с физическим удалением файлов;
-- авторизация по логину и паролю;
-- переключатель интерфейса: русский / английский;
-- локальный SVG-логотип и favicon.
+- Фото, видео, PDF, STL и заметки.
+- Локальные файлы Editor.js и полный набор инструментов редактора в `assets/vendor/editorjs` и `assets/editorjs-full-tools.*`. Во время работы CDN не требуется.
+- Несколько виртуальных пространств — «нычек» — в одном физическом хранилище.
+- Создание, переименование и удаление нычек из списка; рядом с каждой нычкой отображаются отдельные кнопки редактирования и удаления.
+- Необязательный пароль для каждой нычки и запоминание уже открытого доступа.
+- Приватный старт: после перезагрузки обычная нычка остается выбранной, а после перезагрузки парольной открывается нычка по умолчанию. Доступ к парольной нычке при этом не теряется.
+- Поиск, фильтры по типу и датам, хэштэги в левой панели.
+- Masonry-укладка карточек без больших пустых промежутков между строками.
+- Закрепление карточек, быстрые действия и групповые операции.
+- Перемещение карточек между нычками.
+- Загрузка через выбор файлов, drag-and-drop и Ctrl+V.
+- Автосохранение новых медиа-карточек и периодическое автосохранение заметок.
+- Просмотр фотографий, видео, PDF и STL во всплывающем окне.
+- Перелистывание файлов внутри открытой карточки стрелками на экране или клавишами Left/Right. Esc закрывает только просмотр файла, оставляя карточку открытой.
+- Корзина, восстановление и окончательная очистка.
+- Экспорт/импорт вместе с проверкой целостности хранилища.
+- Публикация отдельных записей и заметок во внешнем минималистичном фронтенде.
+
+Изменение порядка фотографий перетаскиванием намеренно отсутствует.
 
 ## Требования
 
-Рекомендуемый минимум:
+- PHP 8.1 или новее;
+- MySQL 5.7+/8.x либо MariaDB 10.4+;
+- расширения PHP: `pdo_mysql`, `gd`, `zip`, `fileinfo`, `mbstring`, `session`;
+- веб-сервер Apache/Nginx либо Laragon для локальной установки;
+- папка вне web-root, доступная PHP на чтение и запись.
 
-- Linux-сервер или локальная машина;
-- Apache или Nginx;
-- PHP 8.1+;
-- MySQL 5.7+ или MariaDB 10.3+;
-- расширения PHP: `pdo_mysql`, `gd`, `mbstring`, `fileinfo`.
+Для крупных файлов отдельно настройте `upload_max_filesize`, `post_max_size`, тайм-ауты PHP и лимит тела запроса веб-сервера.
 
-Для Debian/Ubuntu с Apache:
+## Чистая установка
 
-```bash
-sudo apt update
-sudo apt install apache2 mysql-server php php-mysql php-gd php-mbstring php-fileinfo unzip
-```
+### 1. Скопируйте проект
 
-## Структура проекта
+Распакуйте папку `nook` в web-root. Например:
 
 ```text
-nook/
-├── index.php
-├── api.php
-├── config.php
-├── install.sql
-├── README.md
-├── README_RU.md
-├── README_EN.md
-├── assets/
-│   ├── app.js
-│   ├── style.css
-│   ├── logo.svg
-│   ├── favicon.svg
-│   └── vendor/editorjs/
-└── uploads/
-    ├── originals/
-    ├── thumbs/
-    └── note-images/
+C:\laragon\www\nook
 ```
 
-`uploads/originals` хранит оригиналы фото и видео.  
-`uploads/thumbs` хранит миниатюры изображений.  
-`uploads/note-images` хранит картинки, вставленные в заметки.
-
-Editor.js и инструменты редактора лежат локально в `assets/vendor/editorjs/`, поэтому интернет и CDN для работы редактора не нужны.
-
-Интерфейс поддерживает русский и английский языки. Выбор языка хранится в браузере через cookie/localStorage и не требует изменений в базе данных.
-
-## Установка с нуля
-
-Скопируйте папку проекта на сервер, например:
-
-```bash
-sudo cp -r nook /var/www/html/nook
-```
-
-Создайте базу и таблицы:
-
-```bash
-mysql -u root -p < /var/www/html/nook/install.sql
-```
-
-По умолчанию создается база:
+или:
 
 ```text
-nook
+/var/www/html/nook
 ```
 
-Данные входа по умолчанию:
+### 2. Создайте базу
 
-```text
-login: admin
-password: admin123
+```sql
+CREATE DATABASE nook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-После первого входа пароль лучше сменить вручную через SQL.
-
-## Настройка подключения к MySQL
-
-Откройте `config.php`:
+Импортируйте единственный файл схемы:
 
 ```bash
-sudo nano /var/www/html/nook/config.php
+mysql -u root -p nook < install.sql
 ```
 
-Проверьте параметры:
+`install.sql` нужен только для чистой базы. В этой сборке нет отдельного `upgrade.sql`.
+
+### 3. Настройте `config.php`
+
+Укажите подключение к базе:
 
 ```php
 const DB_HOST = 'localhost';
@@ -117,152 +77,115 @@ const DB_USER = 'root';
 const DB_PASS = '';
 ```
 
-Для отдельного MySQL-пользователя можно сделать так:
+Также замените `APP_SECRET` на длинную случайную строку.
 
-```sql
-CREATE USER 'nook_user'@'localhost' IDENTIFIED BY 'strong_password_here';
-GRANT ALL PRIVILEGES ON nook.* TO 'nook_user'@'localhost';
-FLUSH PRIVILEGES;
-```
+### 4. Войдите
 
-И указать в `config.php`:
-
-```php
-const DB_USER = 'nook_user';
-const DB_PASS = 'strong_password_here';
-```
-
-## Права на uploads
-
-```bash
-sudo mkdir -p /var/www/html/nook/uploads/originals
-sudo mkdir -p /var/www/html/nook/uploads/thumbs
-sudo mkdir -p /var/www/html/nook/uploads/note-images
-sudo chown -R www-data:www-data /var/www/html/nook/uploads
-sudo chmod -R 775 /var/www/html/nook/uploads
-```
-
-Если веб-сервер работает не от `www-data`, используйте его пользователя.
-
-## Лимиты загрузки
-
-В приложении лимит одного файла задан в `config.php`:
-
-```php
-const MAX_UPLOAD_MB = 2048;
-```
-
-Но PHP и веб-сервер тоже должны разрешать такие загрузки.
-
-В `php.ini`:
-
-```ini
-file_uploads = On
-upload_max_filesize = 2048M
-post_max_size = 2200M
-max_file_uploads = 200
-max_input_time = 600
-max_execution_time = 600
-memory_limit = 1024M
-```
-
-После изменения PHP-настроек перезапустите веб-сервер.
-
-Apache:
-
-```bash
-sudo systemctl restart apache2
-```
-
-Nginx + PHP-FPM:
-
-```bash
-sudo systemctl restart php8.2-fpm
-sudo systemctl restart nginx
-```
-
-Для Nginx также может понадобиться:
-
-```nginx
-client_max_body_size 2200M;
-```
-
-## Apache VirtualHost
-
-Пример отдельного хоста:
-
-```apache
-<VirtualHost *:80>
-    ServerName nook.local
-    DocumentRoot /var/www/html/nook
-
-    <Directory /var/www/html/nook>
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/nook_error.log
-    CustomLog ${APACHE_LOG_DIR}/nook_access.log combined
-</VirtualHost>
-```
-
-Включение:
-
-```bash
-sudo a2ensite nook.conf
-sudo systemctl reload apache2
-```
-
-## Смена пароля администратора
-
-Создайте новый хэш:
-
-```bash
-php -r "echo password_hash('NEW_PASSWORD_HERE', PASSWORD_DEFAULT), PHP_EOL;"
-```
-
-Обновите пароль:
-
-```sql
-USE nook;
-UPDATE users SET password_hash = 'PASTE_HASH_HERE' WHERE username = 'admin';
-```
-
-## Обновление из старых версий
-
-Для чистой установки используйте только `install.sql`.
-
-Для обновления старой рабочей базы в архиве оставлены SQL-скрипты:
+Начальные учетные данные:
 
 ```text
-upgrade_auth.sql
-upgrade_media.sql
-upgrade_notes_trash.sql
-upgrade_editorjs_real.sql
+логин:  admin
+пароль: admin123
 ```
 
-Перед обновлением обязательно сделайте бэкап базы и папки `uploads`.
+После первого входа поменяйте логин и пароль в настройках.
 
-## Резервное копирование
+### 5. Укажите папку хранения
 
-База:
+Создайте отдельную папку, например:
 
-```bash
-mysqldump -u root -p nook > nook_backup.sql
+```text
+D:/NookStorage
 ```
 
-Файлы:
+или:
 
-```bash
-sudo tar -czf nook_uploads_backup.tar.gz /var/www/html/nook/uploads
+```text
+/srv/nook-storage
 ```
 
-Для восстановления нужны и база, и папка `uploads`.
+Откройте настройки Nook и укажите абсолютный путь. PHP должен иметь право создавать в этой папке каталоги и файлы.
 
-## Примечания
+## Обновление уже работающей копии
 
-- Фото и видео хранятся как файлы на сервере.
-- Данные записей, заметки и хэштэги хранятся в MySQL.
-- Заметки хранятся в двух видах: JSON Editor.js и HTML для поиска/просмотра.
-- Удаление сначала отправляет запись в корзину.
-- Очистка корзины удаляет данные и связанные файлы окончательно.
+Если у вас уже установлена версия из исходного архива, на основе которого собран этот релиз:
+
+1. Сохраните резервную копию базы, папки хранения и текущих файлов проекта.
+2. Скопируйте файлы новой сборки поверх существующей установки.
+3. Не импортируйте `install.sql` в рабочую базу.
+4. Выполните жесткое обновление страницы: Ctrl+F5.
+
+Дополнительные `php apply...` запускать не требуется.
+
+## Структура
+
+```text
+nook/
+├─ index.php                 закрытый интерфейс и форма входа
+├─ api.php                   основной авторизованный API
+├─ ux_api.php                API дополнительных действий интерфейса
+├─ ux_bootstrap.php          приватный выбор нычки при загрузке
+├─ public.php                публичный фронтенд
+├─ public_api.php            публичный read-only API
+├─ public_admin_api.php      настройки публикации
+├─ file.php                  выдача приватных файлов
+├─ public_file.php           выдача опубликованных файлов
+├─ bootstrap.php             БД, сессия, доступ и хранилище
+├─ config.php                конфигурация экземпляра
+├─ install.sql               схема чистой установки
+├─ assets/                   JavaScript, CSS, SVG и локальный Editor.js
+├─ lib/                      медиа и экспорт/импорт
+└─ tools/                    миграция и восстановление хранилища
+```
+
+`ux_api.php` сохранен отдельно намеренно: эта сборка основана на проверенной текущей версии проекта и не меняет ее рабочую архитектуру ради косметического объединения файлов.
+
+## Папка хранения
+
+Nook создает в выбранном корне служебные подпапки:
+
+```text
+files/
+previews/
+note-images/
+exports/
+imports/
+tmp/
+```
+
+Не размещайте основную папку хранения внутри публичного web-root. Для переноса инстанса переносите одновременно базу и всю папку хранения.
+
+## Editor.js
+
+Все необходимые файлы находятся внутри проекта:
+
+```text
+assets/vendor/editorjs/editorjs.umd.js
+assets/vendor/editorjs/header.umd.js
+assets/vendor/editorjs/list.umd.js
+assets/vendor/editorjs/checklist.umd.js
+assets/vendor/editorjs/quote.umd.js
+assets/vendor/editorjs/delimiter.umd.js
+assets/vendor/editorjs/table.umd.js
+assets/vendor/editorjs/image.umd.js
+assets/vendor/editorjs/image-resizable.umd.js
+assets/editorjs-full-tools.js
+assets/editorjs-full-tools.css
+```
+
+Не удаляйте эти файлы при выкладывании проекта на сервер или GitHub.
+
+## Публичный фронтенд
+
+Публикуются только записи, для которых публикация включена явно. Приватные файлы обслуживаются через `file.php`, а публичные — через отдельный `public_file.php`, который дополнительно проверяет состояние карточки.
+
+## Резервные копии
+
+Перед обновлением или импортом сохраняйте:
+
+- дамп MySQL/MariaDB;
+- всю пользовательскую папку хранения;
+- `config.php`;
+- текущие файлы проекта.
+
+Экспорт Nook не заменяет резервную копию самого сервера и конфигурации.
