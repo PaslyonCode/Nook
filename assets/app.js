@@ -10,13 +10,13 @@
       loginHint:'Войдите, чтобы открыть хранилище.',username:'Логин',password:'Пароль',signIn:'Войти',defaultCredentials:'По умолчанию: admin / admin123',
       brandSubtitle:'Личное хранилище медиа и заметок',currentNook:'Текущая нычка',noteButton:'Заметка',batchMode:'Групповое добавление',sharedHashtag:'Хэштэг для всех записей',sharedHidden:'Невидимые записи',dropTitle:'Перетащите файлы сюда',dropHint:'Фото, видео, PDF и STL · можно вставить Ctrl+V',chooseFiles:'Выбрать файлы',filters:'Фильтры',searchPlaceholder:'Поиск по всем полям',allTypes:'Все типы',photos:'Фото',videos:'Видео',documents:'Документы PDF',notes:'Заметки',resetFilters:'Сбросить фильтры',hashtags:'Хэштэги',all:'все',trash:'Корзина',entries:'Записи',backToEntries:'Вернуться к записям',availableNooks:'Доступные нычки',addNook:'Добавить нычку',editNook:'Изменить нычку',settings:'Настройки',export:'Экспорт',import:'Импорт',language:'Язык',logout:'Выйти',loading:'Загрузка…',
       newGroup:'Новая группа',title:'Заголовок',description:'Описание',hidden:'Невидимая',cancel:'Отмена',close:'Закрыть',save:'Сохранить',delete:'Удалить',edit:'Редактировать',addFiles:'Добавить файлы',moveToNook:'Переместить в нычку',note:'Заметка',noteTitle:'Заголовок заметки',insertImage:'Вставить картинку',attachments:'Вложения',download:'Скачать',storageFolder:'Папка хранения',storageHelp:'Используйте абсолютный путь к папке, доступной PHP на запись.',name:'Имя',spacePasswordOptional:'Пароль нычки (необязательно)',newSpacePassword:'Пароль новой нычки',newPasswordHint:'Введите новый пароль для нычки.',passwordAction:'Действие с паролем',keepPassword:'Не менять',setPassword:'Установить новый',removePassword:'Убрать пароль',unlockNook:'Открыть нычку',rememberAccess:'Запомнить доступ на 30 дней',unlock:'Открыть',move:'Переместить',exportHelp:'Архив содержит базу и все файлы и сохраняется в подпапке exports.',createExport:'Создать экспорт',importHelp:'Поместите ZIP или распакованную папку в подпапку imports выбранного хранилища.',
-      noEntries:'Ничего не найдено',found:'Найдено: {count}',created:'Создано: {count}',saved:'Сохранено',deleted:'Перемещено в корзину',restored:'Восстановлено',confirmDelete:'Переместить запись в корзину?',confirmPermanent:'Окончательно удалить все записи в корзине и связанные файлы?',confirmSpaceDelete:'Удалить нычку? Все записи будут перенесены в другую доступную нычку.',wrongPassword:'Неверный пароль',storageRequired:'Сначала укажите папку хранения в настройках.',autosaved:'Автосохранено',saving:'Сохранение…',noteCreated:'Черновик заметки создан',selectFiles:'Выберите хотя бы один поддерживаемый файл.',batchUploading:'Загрузка {count} файлов…',file:'Файл',photo:'Фото',video:'Видео',pdf:'PDF',stl:'STL',noteType:'Заметка',protected:'защищена',open:'Открыть',switchTo:'Переключиться',rename:'Изменить',remove:'Удалить',restore:'Восстановить',emptyTrash:'Очистить корзину',create:'Создать',packageReady:'Архив создан',importConfirm:'Импорт заменит текущую базу и содержимое хранилища. Продолжить?',integrityOk:'Импорт завершен, целостность проверена.',openViewer:'Открыть просмотр',unsupportedPreview:'Для этого типа доступно скачивание.',spaceLocked:'Нычка защищена паролем.',noOtherNooks:'Нет другой нычки для перемещения.',movedToNook:'Запись перемещена в нычку «{name}».',pin:'Закрепить',unpin:'Открепить',pinned:'Запись закреплена',unpinned:'Запись откреплена',pastedFiles:'Вставлено файлов: {count}',
+      noEntries:'Ничего не найдено',found:'Найдено: {count}',created:'Создано: {count}',saved:'Сохранено',deleted:'Перемещено в корзину',restored:'Восстановлено',confirmDelete:'Переместить запись в корзину?',confirmPermanent:'Окончательно удалить все записи в корзине и связанные файлы?',confirmSpaceDelete:'Удалить нычку? Все записи будут перенесены в другую доступную нычку.',wrongPassword:'Неверный пароль',storageRequired:'Сначала укажите папку хранения в настройках.',autosaved:'Автосохранено',saving:'Сохранение…',changed:'Изменено',editorLoading:'Загрузка редактора…',noteCreated:'Черновик заметки создан',selectFiles:'Выберите хотя бы один поддерживаемый файл.',batchUploading:'Загрузка {count} файлов…',file:'Файл',photo:'Фото',video:'Видео',pdf:'PDF',stl:'STL',noteType:'Заметка',protected:'защищена',open:'Открыть',switchTo:'Переключиться',rename:'Изменить',remove:'Удалить',restore:'Восстановить',emptyTrash:'Очистить корзину',create:'Создать',packageReady:'Архив создан',importConfirm:'Импорт заменит текущую базу и содержимое хранилища. Продолжить?',integrityOk:'Импорт завершен, целостность проверена.',openViewer:'Открыть просмотр',unsupportedPreview:'Для этого типа доступно скачивание.',spaceLocked:'Нычка защищена паролем.',noOtherNooks:'Нет другой нычки для перемещения.',movedToNook:'Запись перемещена в нычку «{name}».',pin:'Закрепить',unpin:'Открепить',pinned:'Запись закреплена',unpinned:'Запись откреплена',pastedFiles:'Вставлено файлов: {count}',
     },
     en: {
       loginHint:'Sign in to open the storage.',username:'Username',password:'Password',signIn:'Sign in',defaultCredentials:'Default: admin / admin123',
       brandSubtitle:'Personal media and notes storage',currentNook:'Current nook',noteButton:'Note',batchMode:'Batch import',sharedHashtag:'Hashtag for all entries',sharedHidden:'Hidden entries',dropTitle:'Drop files here',dropHint:'Photos, videos, PDF and STL · Ctrl+V also works',chooseFiles:'Choose files',filters:'Filters',searchPlaceholder:'Search all fields',allTypes:'All types',photos:'Photos',videos:'Videos',documents:'PDF documents',notes:'Notes',resetFilters:'Reset filters',hashtags:'Hashtags',all:'all',trash:'Trash',entries:'Entries',backToEntries:'Back to entries',availableNooks:'Available nooks',addNook:'Add nook',editNook:'Edit nook',settings:'Settings',export:'Export',import:'Import',language:'Language',logout:'Log out',loading:'Loading…',
       newGroup:'New group',title:'Title',description:'Description',hidden:'Hidden',cancel:'Cancel',close:'Close',save:'Save',delete:'Delete',edit:'Edit',addFiles:'Add files',moveToNook:'Move to nook',note:'Note',noteTitle:'Note title',insertImage:'Insert image',attachments:'Attachments',download:'Download',storageFolder:'Storage folder',storageHelp:'Use an absolute folder path writable by PHP.',name:'Name',spacePasswordOptional:'Nook password (optional)',newSpacePassword:'New nook password',newPasswordHint:'Enter a new password for the nook.',passwordAction:'Password action',keepPassword:'Keep unchanged',setPassword:'Set new password',removePassword:'Remove password',unlockNook:'Unlock nook',rememberAccess:'Remember access for 30 days',unlock:'Unlock',move:'Move',exportHelp:'The package contains the database and all files and is saved under exports.',createExport:'Create export',importHelp:'Put a ZIP or extracted package folder under the selected storage imports folder.',
-      noEntries:'Nothing found',found:'Found: {count}',created:'Created: {count}',saved:'Saved',deleted:'Moved to trash',restored:'Restored',confirmDelete:'Move this entry to trash?',confirmPermanent:'Permanently delete all trash entries and their files?',confirmSpaceDelete:'Delete this nook? Its entries will be moved to another available nook.',wrongPassword:'Wrong password',storageRequired:'Configure the storage folder first.',autosaved:'Autosaved',saving:'Saving…',noteCreated:'Note draft created',selectFiles:'Select at least one supported file.',batchUploading:'Uploading {count} files…',file:'File',photo:'Photo',video:'Video',pdf:'PDF',stl:'STL',noteType:'Note',protected:'protected',open:'Open',switchTo:'Switch',rename:'Edit',remove:'Delete',restore:'Restore',emptyTrash:'Empty trash',create:'Create',packageReady:'Export package created',importConfirm:'Import will replace the current database and managed storage content. Continue?',integrityOk:'Import completed and integrity was verified.',openViewer:'Open viewer',unsupportedPreview:'Download is available for this file type.',spaceLocked:'This nook is password-protected.',noOtherNooks:'There is no other nook to move this entry to.',movedToNook:'Entry moved to “{name}”.',pin:'Pin',unpin:'Unpin',pinned:'Entry pinned',unpinned:'Entry unpinned',pastedFiles:'Pasted files: {count}',
+      noEntries:'Nothing found',found:'Found: {count}',created:'Created: {count}',saved:'Saved',deleted:'Moved to trash',restored:'Restored',confirmDelete:'Move this entry to trash?',confirmPermanent:'Permanently delete all trash entries and their files?',confirmSpaceDelete:'Delete this nook? Its entries will be moved to another available nook.',wrongPassword:'Wrong password',storageRequired:'Configure the storage folder first.',autosaved:'Autosaved',saving:'Saving…',changed:'Changed',editorLoading:'Loading editor…',noteCreated:'Note draft created',selectFiles:'Select at least one supported file.',batchUploading:'Uploading {count} files…',file:'File',photo:'Photo',video:'Video',pdf:'PDF',stl:'STL',noteType:'Note',protected:'protected',open:'Open',switchTo:'Switch',rename:'Edit',remove:'Delete',restore:'Restore',emptyTrash:'Empty trash',create:'Create',packageReady:'Export package created',importConfirm:'Import will replace the current database and managed storage content. Continue?',integrityOk:'Import completed and integrity was verified.',openViewer:'Open viewer',unsupportedPreview:'Download is available for this file type.',spaceLocked:'This nook is password-protected.',noOtherNooks:'There is no other nook to move this entry to.',movedToNook:'Entry moved to “{name}”.',pin:'Pin',unpin:'Unpin',pinned:'Entry pinned',unpinned:'Entry unpinned',pastedFiles:'Pasted files: {count}',
     },
   };
 
@@ -27,12 +27,12 @@
     filters: { q:'', date_from:'', date_to:'', tag:'', type:'all' },
     selectedFiles: [], previewUrls: [], pendingUnlock: null, noteAutosaveTimer: null,
     mediaAutosaveTimer: null, mediaAutosaveBusy: false, mediaAutosavePending: false, mediaLastSnapshot: '', mediaUploadBusy: false,
-    observer: null, viewerCleanup: null,
+    observer: null, viewerCleanup: null, noteEditor: null, noteEditorCardId: 0, noteEditorLoading: false,
   };
 
   const els = {};
   function bindEls() {
-    const ids = ['gallery','loadSentinel','statusBox','emptyTrashBtn','resultInfo','currentSpaceName','trashCount','trashBtn','backFromTrashBtn','contentTitle','mainMenuBtn','mainMenu','languageSelect','dropZone','chooseFilesBtn','fileInput','batchUploadInput','batchHashtagInput','batchHiddenInput','newNoteBtn','searchInput','dateFromInput','dateToInput','typeFilter','resetFiltersBtn','clearTagBtn','tagsList','uploadModal','uploadPreview','uploadForm','saveUploadBtn','cardModal','cardMedia','cardForm','cardTitle','cardDate','cardAutosaveState','cardPinBtn','cardEditTools','addMediaBtn','addMediaInput','moveCardBtn','deleteCardBtn','cancelCardEditBtn','editCardBtn','saveCardBtn','noteModal','noteForm','noteEditor','noteAutosaveState','notePinBtn','noteInlineImageInput','insertNoteImageBtn','attachmentInput','addAttachmentBtn','attachmentList','deleteNoteBtn','moveNoteBtn','saveNoteBtn','viewerModal','viewerBody','viewerTitle','viewerMeta','viewerDownload','settingsModal','settingsForm','storageRootInput','spacesModal','spacesList','spaceFormModal','spaceForm','spaceFormTitle','passwordModeLabel','spacePasswordLabel','spacePasswordText','spacePasswordHint','unlockModal','unlockForm','moveModal','moveForm','moveSpaceSelect','exportModal','createExportBtn','exportsList','importModal','importsList'];
+    const ids = ['gallery','loadSentinel','statusBox','emptyTrashBtn','resultInfo','currentSpaceName','trashCount','trashBtn','backFromTrashBtn','contentTitle','mainMenuBtn','mainMenu','languageSelect','dropZone','chooseFilesBtn','fileInput','batchUploadInput','batchHashtagInput','batchHiddenInput','newNoteBtn','searchInput','dateFromInput','dateToInput','typeFilter','resetFiltersBtn','clearTagBtn','tagsList','uploadModal','uploadPreview','uploadForm','saveUploadBtn','cardModal','cardMedia','cardForm','cardTitle','cardDate','cardAutosaveState','cardPinBtn','cardEditTools','addMediaBtn','addMediaInput','moveCardBtn','deleteCardBtn','cancelCardEditBtn','editCardBtn','saveCardBtn','noteModal','noteForm','noteEditor','noteAutosaveState','notePinBtn','attachmentInput','addAttachmentBtn','attachmentList','deleteNoteBtn','moveNoteBtn','saveNoteBtn','viewerModal','viewerBody','viewerTitle','viewerMeta','viewerDownload','settingsModal','settingsForm','storageRootInput','spacesModal','spacesList','spaceFormModal','spaceForm','spaceFormTitle','passwordModeLabel','spacePasswordLabel','spacePasswordText','spacePasswordHint','unlockModal','unlockForm','moveModal','moveForm','moveSpaceSelect','exportModal','createExportBtn','exportsList','importModal','importsList'];
     for (const id of ids) els[id] = document.getElementById(id);
   }
 
@@ -121,7 +121,7 @@
     openModal('move');
   }
 
-  async function openCard(id){try{const data=await withUnlock(()=>api('get',{params:{id}}));state.currentCard=data.card;if(data.card.entry_type==='note')renderNote(data.card);else renderMediaCard(data.card);}catch(e){showStatus(e.message,'error');}}
+  async function openCard(id){try{const data=await withUnlock(()=>api('get',{params:{id}}));state.currentCard=data.card;if(data.card.entry_type==='note')await renderNote(data.card);else renderMediaCard(data.card);}catch(e){showStatus(e.message,'error');}}
 
   function syncPinButton(card) {
     const button = card?.entry_type === 'note' ? els.notePinBtn : els.cardPinBtn;
@@ -136,8 +136,9 @@
   async function saveDraftNoteBeforePin() {
     if (!state.currentCard || state.currentCard.entry_type !== 'note' || !state.currentCard.is_draft) return;
     const fd = new FormData(els.noteForm);
-    fd.set('body_json', noteJson());
-    fd.set('body_html', els.noteEditor.innerHTML);
+    const content = await collectNoteContent();
+    fd.set('body_json', content.json);
+    fd.set('body_html', content.html);
     fd.set('is_hidden', els.noteForm.elements.is_hidden.checked ? '1' : '0');
     els.noteAutosaveState.textContent = tr('saving');
     const data = await api('note_save', { method:'POST', formData:fd });
@@ -220,13 +221,137 @@
 
   function startNoteAutosave(){stopNoteAutosave();state.noteAutosaveTimer=setInterval(()=>saveNote(true),3*60*1000);}
   function stopNoteAutosave(){if(state.noteAutosaveTimer)clearInterval(state.noteAutosaveTimer);state.noteAutosaveTimer=null;}
-  async function newNote(){try{const data=await withUnlock(()=>api('note_draft',{method:'POST'}));renderNote(data.card);showStatus(tr('noteCreated'),'success');}catch(e){showStatus(e.message,'error');}}
-  function renderNote(card){state.currentCard=card;els.noteForm.elements.id.value=card.id;els.noteForm.elements.title.value=card.title||'';els.noteForm.elements.hashtags.value=(card.tags||[]).map(t=>`#${t}`).join(' ');els.noteForm.elements.is_hidden.checked=!!card.is_hidden;els.noteEditor.innerHTML=card.body_html||'';renderAttachments(card.media||[]);els.deleteNoteBtn.hidden=!!card.is_draft;els.deleteNoteBtn.textContent=card.deleted_at?tr('restore'):tr('delete');if(els.moveNoteBtn)els.moveNoteBtn.hidden=!!card.is_draft||!!card.deleted_at||state.spaces.filter(s=>Number(s.id)!==Number(card.space_id)).length===0;els.noteAutosaveState.textContent='';syncPinButton(card);openModal('note');startNoteAutosave();}
-  function noteJson(){return JSON.stringify({time:Date.now(),version:'2.30-compatible',blocks:[{type:'raw',data:{html:els.noteEditor.innerHTML}}]});}
-  async function saveNote(auto=false){if(!state.currentCard)return;const fd=new FormData(els.noteForm);fd.set('body_json',noteJson());fd.set('body_html',els.noteEditor.innerHTML);fd.set('is_hidden',els.noteForm.elements.is_hidden.checked?'1':'0');if(!auto)els.noteAutosaveState.textContent=tr('saving');try{const data=await api('note_save',{method:'POST',formData:fd});state.currentCard=data.card;syncPinButton(data.card);els.deleteNoteBtn.hidden=!!data.card.is_draft;els.noteAutosaveState.textContent=auto?tr('autosaved'):tr('saved');resetGallery();}catch(e){if(!auto)showStatus(e.message,'error');}}
+  async function newNote(){try{const data=await withUnlock(()=>api('note_draft',{method:'POST'}));await renderNote(data.card);showStatus(tr('noteCreated'),'success');}catch(e){showStatus(e.message,'error');}}
+
+  function legacyHtmlToEditorData(html) {
+    const source=document.createElement('div');source.innerHTML=String(html||'');const blocks=[];
+    const paragraph=(value)=>{if(String(value||'').replace(/<br\s*\/?>/gi,'').trim())blocks.push({type:'paragraph',data:{text:String(value)}});};
+    const addNode=(node)=>{
+      if(node.nodeType===Node.TEXT_NODE){if(node.textContent.trim())paragraph(escapeHtml(node.textContent));return;}
+      if(node.nodeType!==Node.ELEMENT_NODE)return;
+      const tag=node.tagName.toLowerCase();
+      if(tag==='br')return;
+      if(/^h[1-6]$/.test(tag)){blocks.push({type:'header',data:{text:node.innerHTML,level:Number(tag[1])}});return;}
+      if(tag==='ul'||tag==='ol'){blocks.push({type:'list',data:{style:tag==='ol'?'ordered':'unordered',items:[...node.children].filter(el=>el.tagName==='LI').map(el=>el.innerHTML)}});return;}
+      if(tag==='blockquote'){blocks.push({type:'quote',data:{text:node.innerHTML,caption:'',alignment:'left'}});return;}
+      if(tag==='pre'){blocks.push({type:'code',data:{code:node.textContent||''}});return;}
+      if(tag==='hr'){blocks.push({type:'delimiter',data:{}});return;}
+      if(tag==='table'){
+        const rows=[...node.querySelectorAll('tr')].map(row=>[...row.children].filter(cell=>/^(TD|TH)$/.test(cell.tagName)).map(cell=>cell.innerHTML));
+        blocks.push({type:'table',data:{withHeadings:!!node.querySelector('tr:first-child th'),content:rows.length?rows:[['','']]}});return;
+      }
+      if(tag==='img'){
+        const width=(node.style.width||'').trim();
+        blocks.push({type:'image',data:{file:{url:node.getAttribute('src')||'',mediaId:Number(node.dataset.mediaId||0)||undefined},caption:node.getAttribute('alt')||'',width:/^(25|50|75|100)%$/.test(width)?width:'100%',withBorder:false,withBackground:false,stretched:false}});return;
+      }
+      if(tag==='p'&&node.children.length===1&&node.firstElementChild?.tagName==='IMG'){addNode(node.firstElementChild);return;}
+      if(tag==='div'&&[...node.children].some(el=>/^(P|DIV|H[1-6]|UL|OL|BLOCKQUOTE|PRE|HR|TABLE|IMG)$/.test(el.tagName))){[...node.childNodes].forEach(addNode);return;}
+      paragraph(tag==='p'||tag==='div'?node.innerHTML:node.outerHTML);
+    };
+    [...source.childNodes].forEach(addNode);
+    return {time:Date.now(),version:'2.31.0',blocks};
+  }
+
+  function noteEditorData(card) {
+    let data=card?.body_json;
+    if(typeof data==='string'){try{data=JSON.parse(data);}catch{data=null;}}
+    if(data&&Array.isArray(data.blocks)){
+      const legacy=data.blocks.length===1&&data.blocks[0]?.type==='raw'&&typeof data.blocks[0]?.data?.html==='string';
+      if(!legacy)return data;
+      return legacyHtmlToEditorData(card?.body_html||data.blocks[0].data.html);
+    }
+    return legacyHtmlToEditorData(card?.body_html||'');
+  }
+
+  function listItemsHtml(items,style) {
+    const tag=style==='ordered'?'ol':'ul';
+    const rows=(Array.isArray(items)?items:[]).map(item=>{
+      const data=typeof item==='string'?{content:item,items:[]}:(item||{});
+      const content=data.content??data.text??'';
+      return `<li>${content}${Array.isArray(data.items)&&data.items.length?listItemsHtml(data.items,style):''}</li>`;
+    }).join('');
+    return `<${tag}>${rows}</${tag}>`;
+  }
+
+  function editorDataToHtml(data) {
+    return (data?.blocks||[]).map(block=>{
+      const d=block?.data||{};
+      switch(block?.type){
+        case 'header':{const level=Math.min(4,Math.max(1,Number(d.level)||2));return `<h${level}>${d.text||''}</h${level}>`;}
+        case 'list':return listItemsHtml(d.items,d.style||d.type);
+        case 'checklist':return `<div>${(d.items||[]).map(item=>`<p>${item?.checked?'☑':'☐'} ${item?.text||''}</p>`).join('')}</div>`;
+        case 'quote':return `<blockquote>${d.text||''}${d.caption?`<p><em>${d.caption}</em></p>`:''}</blockquote>`;
+        case 'warning':return `<div>${d.title?`<strong>${d.title}</strong>`:''}${d.message?`<p>${d.message}</p>`:''}</div>`;
+        case 'delimiter':return '<hr>';
+        case 'table':{
+          const rows=Array.isArray(d.content)?d.content:[];
+          return `<table>${rows.map((row,ri)=>`<tr>${(row||[]).map(cell=>`<${ri===0&&d.withHeadings?'th':'td'}>${cell??''}</${ri===0&&d.withHeadings?'th':'td'}>`).join('')}</tr>`).join('')}</table>`;
+        }
+        case 'code':return `<pre><code>${escapeHtml(d.code||'')}</code></pre>`;
+        case 'raw':return String(d.html||'');
+        case 'embed':return d.source?`<p><a href="${escapeHtml(d.source)}">${escapeHtml(d.caption||d.source)}</a></p>`:'';
+        case 'image':{
+          const url=d.file?.url||d.url||'';if(!url)return '';
+          const rawWidth=String(d.width||d.imageWidth||'100%');const width=/^(25|50|75|100)%$/.test(rawWidth)?rawWidth:'100%';
+          const mediaId=Number(d.file?.mediaId||d.file?.id||d.mediaId||0);
+          return `<div><img src="${escapeHtml(url)}" alt="${escapeHtml(String(d.caption||'').replace(/<[^>]*>/g,''))}"${mediaId?` data-media-id="${mediaId}"`:''} style="width:${width}">${d.caption?`<p>${d.caption}</p>`:''}</div>`;
+        }
+        case 'paragraph':default:return d.text?`<p>${d.text}</p>`:'';
+      }
+    }).join('');
+  }
+
+  async function imageToolUpload(file) {
+    const uploaded=await uploadNoteFiles([file],'inline');const media=uploaded[0];
+    if(!media)throw new Error(state.lang==='ru'?'Изображение не было загружено.':'The image was not uploaded.');
+    return {success:1,file:{url:media.url,name:media.name||file.name,mediaId:Number(media.id)||0}};
+  }
+
+  async function initializeNoteEditor(card) {
+    if(typeof window.EditorJS!=='function')throw new Error('Локальное ядро Editor.js не загрузилось.');
+    const data=noteEditorData(card);state.noteEditorLoading=true;
+    try{
+      if(state.noteEditor){
+        try{await state.noteEditor.isReady;state.noteEditor.destroy();}catch(_error){}
+        state.noteEditor=null;
+      }
+      els.noteEditor.replaceChildren();
+      state.noteEditor=new window.EditorJS({
+        holder:els.noteEditor,data,autofocus:true,logLevel:'ERROR',
+        tools:{
+          image:{
+            class:window.ImageTool,
+            inlineToolbar:true,
+            config:{
+              types:'image/*',captionPlaceholder:state.lang==='ru'?'Подпись':'Caption',
+              uploader:{uploadByFile:imageToolUpload,uploadByUrl:async()=>({success:0})}
+            }
+          }
+        },
+        onChange:()=>{if(!state.noteEditorLoading)els.noteAutosaveState.textContent=tr('changed');}
+      });
+      await state.noteEditor.isReady;
+      state.noteEditorCardId=Number(card.id)||0;
+    }finally{state.noteEditorLoading=false;}
+  }
+
+  async function collectNoteContent() {
+    let data=noteEditorData(state.currentCard);
+    if(state.noteEditor&&state.noteEditorCardId===Number(state.currentCard?.id||0)){
+      await state.noteEditor.isReady;
+      data=await state.noteEditor.save();
+    }
+    return {data,json:JSON.stringify(data),html:editorDataToHtml(data)};
+  }
+
+  async function renderNote(card){
+    state.currentCard=card;els.noteForm.elements.id.value=card.id;els.noteForm.elements.title.value=card.title||'';els.noteForm.elements.hashtags.value=(card.tags||[]).map(t=>`#${t}`).join(' ');els.noteForm.elements.is_hidden.checked=!!card.is_hidden;renderAttachments(card.media||[]);els.deleteNoteBtn.hidden=!!card.is_draft;els.deleteNoteBtn.textContent=card.deleted_at?tr('restore'):tr('delete');if(els.moveNoteBtn)els.moveNoteBtn.hidden=!!card.is_draft||!!card.deleted_at||state.spaces.filter(s=>Number(s.id)!==Number(card.space_id)).length===0;els.noteAutosaveState.textContent=tr('editorLoading');syncPinButton(card);openModal('note');
+    try{await initializeNoteEditor(card);els.noteAutosaveState.textContent='';startNoteAutosave();}catch(error){els.noteAutosaveState.textContent='';els.noteEditor.innerHTML=`<div class="editor-error">${escapeHtml(error.message||String(error))}</div>`;showStatus(error.message||String(error),'error');}
+  }
+
+  async function saveNote(auto=false){if(!state.currentCard)return;const fd=new FormData(els.noteForm);if(!auto)els.noteAutosaveState.textContent=tr('saving');try{const content=await collectNoteContent();fd.set('body_json',content.json);fd.set('body_html',content.html);fd.set('is_hidden',els.noteForm.elements.is_hidden.checked?'1':'0');const data=await api('note_save',{method:'POST',formData:fd});state.currentCard=data.card;syncPinButton(data.card);els.deleteNoteBtn.hidden=!!data.card.is_draft;els.noteAutosaveState.textContent=auto?tr('autosaved'):tr('saved');resetGallery();}catch(e){els.noteAutosaveState.textContent='';if(!auto)showStatus(e.message,'error');}}
   function renderAttachments(media){const attachments=media.filter(m=>m.role==='attachment');els.attachmentList.innerHTML=attachments.map(m=>`<div class="attachment-row"><button type="button" data-att-open="${m.id}">${escapeHtml(m.name)} · ${typeLabel(m.media_type)} · ${formatBytes(m.size_bytes)}</button><a class="btn" href="${m.url}&download=1">↓</a><button class="btn btn-danger" type="button" data-att-delete="${m.id}">×</button></div>`).join('');$$('[data-att-open]',els.attachmentList).forEach(b=>b.onclick=()=>openViewer(media.find(m=>String(m.id)===b.dataset.attOpen)));$$('[data-att-delete]',els.attachmentList).forEach(b=>b.onclick=()=>deleteNoteAttachment(Number(b.dataset.attDelete)));}
   async function uploadNoteFiles(files,role){if(!state.currentCard)return;const fd=new FormData();fd.set('id',state.currentCard.id);Array.from(files||[]).forEach(f=>fd.append('files[]',f));if(role==='attachment')await appendVideoPreviews(fd,Array.from(files||[]));const action=role==='inline'?'note_inline_upload':'note_attachment_upload';const data=await api(action,{method:'POST',formData:fd});state.currentCard=data.card;renderAttachments(data.card.media||[]);return data.uploaded||[];}
-  async function insertNoteImage(file){const uploaded=await uploadNoteFiles([file],'inline');const media=uploaded[0];if(!media)return;const img=document.createElement('img');img.src=media.url;img.dataset.mediaId=media.id;img.style.width='50%';img.alt=media.name;els.noteEditor.appendChild(img);els.noteEditor.appendChild(document.createElement('p'));}
   async function deleteNoteAttachment(id){const fd=new FormData();fd.set('media_id',id);const data=await api('media_delete',{method:'POST',formData:fd});state.currentCard=data.card;renderAttachments(data.card.media||[]);}
 
   async function softDeleteCurrent(){if(!state.currentCard)return;const isDeleted=!!state.currentCard.deleted_at;if(!isDeleted&&!confirm(tr('confirmDelete')))return;const fd=new FormData();fd.set('id',state.currentCard.id);await api(isDeleted?'restore':'delete',{method:'POST',formData:fd});closeModal(state.currentCard.entry_type==='note'?'note':'card');showStatus(isDeleted?tr('restored'):tr('deleted'),'success');resetGallery();loadState();}
@@ -295,7 +420,7 @@
     document.addEventListener('paste',e=>{handleClipboardPaste(e).catch(err=>showStatus(err.message,'error'));});
     els.batchUploadInput.checked=localStorage.getItem('nook_batch')==='1';els.batchHiddenInput.checked=localStorage.getItem('nook_batch_hidden')==='1';const syncBatch=()=>{els.batchHashtagInput.disabled=!els.batchUploadInput.checked;els.batchHiddenInput.disabled=!els.batchUploadInput.checked;};syncBatch();els.batchUploadInput.onchange=()=>{localStorage.setItem('nook_batch',els.batchUploadInput.checked?'1':'0');syncBatch();};els.batchHiddenInput.onchange=()=>localStorage.setItem('nook_batch_hidden',els.batchHiddenInput.checked?'1':'0');
     els.uploadForm.onsubmit=e=>{e.preventDefault();saveUpload(false);};els.editCardBtn.onclick=()=>setCardEdit(true);els.cancelCardEditBtn.onclick=()=>renderMediaCard(state.currentCard);els.cardForm.onsubmit=e=>{e.preventDefault();saveMediaCard(false);};els.cardForm.addEventListener('input',scheduleMediaAutosave);els.cardForm.addEventListener('change',scheduleMediaAutosave);els.addMediaBtn.onclick=()=>els.addMediaInput.click();els.addMediaInput.onchange=()=>addMedia(els.addMediaInput.files);els.deleteCardBtn.onclick=softDeleteCurrent;els.moveCardBtn.onclick=openMoveForCurrentCard;els.cardPinBtn.onclick=togglePinCurrent;
-    els.newNoteBtn.onclick=newNote;els.noteForm.onsubmit=e=>{e.preventDefault();saveNote(false);};els.deleteNoteBtn.onclick=softDeleteCurrent;els.moveNoteBtn.onclick=openMoveForCurrentCard;els.notePinBtn.onclick=togglePinCurrent;$$('[data-editor-command]').forEach(b=>b.onclick=()=>document.execCommand(b.dataset.editorCommand));els.insertNoteImageBtn.onclick=()=>els.noteInlineImageInput.click();els.noteInlineImageInput.onchange=()=>insertNoteImage(els.noteInlineImageInput.files[0]);els.noteEditor.onclick=e=>{if(e.target.tagName==='IMG'){const w=prompt('Width: 25%, 50%, 75%, 100%',e.target.style.width||'50%');if(w)e.target.style.width=w;}};els.addAttachmentBtn.onclick=()=>els.attachmentInput.click();els.attachmentInput.onchange=()=>uploadNoteFiles(els.attachmentInput.files,'attachment');
+    els.newNoteBtn.onclick=newNote;els.noteForm.onsubmit=async e=>{e.preventDefault();await saveNote(false);};els.deleteNoteBtn.onclick=softDeleteCurrent;els.moveNoteBtn.onclick=openMoveForCurrentCard;els.notePinBtn.onclick=togglePinCurrent;els.addAttachmentBtn.onclick=()=>els.attachmentInput.click();els.attachmentInput.onchange=async()=>{await uploadNoteFiles(els.attachmentInput.files,'attachment');els.attachmentInput.value='';};
     const debounce=(fn,ms=300)=>{let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms);};};els.searchInput.oninput=debounce(()=>{state.filters.q=els.searchInput.value.trim();resetGallery();});els.dateFromInput.onchange=()=>{state.filters.date_from=els.dateFromInput.value;resetGallery();};els.dateToInput.onchange=()=>{state.filters.date_to=els.dateToInput.value;resetGallery();};els.typeFilter.onchange=()=>{state.filters.type=els.typeFilter.value;resetGallery();};els.resetFiltersBtn.onclick=()=>{state.filters={q:'',date_from:'',date_to:'',tag:'',type:'all'};els.searchInput.value='';els.dateFromInput.value='';els.dateToInput.value='';els.typeFilter.value='all';resetGallery();};els.clearTagBtn.onclick=()=>{state.filters.tag='';resetGallery();};
     els.trashBtn.onclick=()=>{state.trash=true;els.backFromTrashBtn.hidden=false;els.emptyTrashBtn.hidden=false;els.contentTitle.textContent=tr('trash');resetGallery();};els.backFromTrashBtn.onclick=()=>{state.trash=false;els.backFromTrashBtn.hidden=true;els.emptyTrashBtn.hidden=true;els.contentTitle.textContent=tr('entries');resetGallery();};els.emptyTrashBtn.onclick=async()=>{if(!confirm(tr('confirmPermanent')))return;try{await api('empty_trash',{method:'POST'});await loadState();resetGallery();}catch(e){showStatus(e.message,'error');}};
     els.settingsForm.onsubmit=async e=>{e.preventDefault();try{await api('settings_save',{method:'POST',formData:new FormData(els.settingsForm)});closeModal('settings');await loadState();resetGallery();showStatus(tr('saved'),'success');}catch(err){showStatus(err.message,'error');}};
@@ -317,7 +442,7 @@
       finally{if(submitButton)submitButton.disabled=false;}
     };
     els.unlockForm.onsubmit=async e=>{e.preventDefault();const fd=new FormData(els.unlockForm);try{await api('space_unlock',{method:'POST',formData:fd});closeModal('unlock');await loadState();if(state.pendingUnlock){const p=state.pendingUnlock;state.pendingUnlock=null;try{p.resolve(await p.task());}catch(err){p.reject(err);}}else resetGallery();}catch(err){showStatus(err.message,'error');}};
-    els.moveForm.onsubmit=async e=>{e.preventDefault();if(!state.currentCard)return;const submit=els.moveForm.querySelector('[type="submit"]');const destination=state.spaces.find(s=>String(s.id)===String(els.moveForm.elements.space_id.value));if(submit)submit.disabled=true;try{if(state.currentCard.entry_type==='note'&&!state.currentCard.deleted_at){const noteFd=new FormData(els.noteForm);noteFd.set('body_json',noteJson());noteFd.set('body_html',els.noteEditor.innerHTML);noteFd.set('is_hidden',els.noteForm.elements.is_hidden.checked?'1':'0');const saved=await api('note_save',{method:'POST',formData:noteFd});state.currentCard=saved.card;}const sourceType=state.currentCard.entry_type;await withUnlock(()=>api('move',{method:'POST',formData:new FormData(els.moveForm)}));closeModal('move');closeModal(sourceType==='note'?'note':'card');showStatus(tr('movedToNook',{name:destination?.name||''}),'success');await loadState();resetGallery();}catch(err){showStatus(err.message,'error');}finally{if(submit)submit.disabled=false;}};
+    els.moveForm.onsubmit=async e=>{e.preventDefault();if(!state.currentCard)return;const submit=els.moveForm.querySelector('[type="submit"]');const destination=state.spaces.find(s=>String(s.id)===String(els.moveForm.elements.space_id.value));if(submit)submit.disabled=true;try{if(state.currentCard.entry_type==='note'&&!state.currentCard.deleted_at){const noteFd=new FormData(els.noteForm);const content=await collectNoteContent();noteFd.set('body_json',content.json);noteFd.set('body_html',content.html);noteFd.set('is_hidden',els.noteForm.elements.is_hidden.checked?'1':'0');const saved=await api('note_save',{method:'POST',formData:noteFd});state.currentCard=saved.card;}const sourceType=state.currentCard.entry_type;await withUnlock(()=>api('move',{method:'POST',formData:new FormData(els.moveForm)}));closeModal('move');closeModal(sourceType==='note'?'note':'card');showStatus(tr('movedToNook',{name:destination?.name||''}),'success');await loadState();resetGallery();}catch(err){showStatus(err.message,'error');}finally{if(submit)submit.disabled=false;}};
     els.createExportBtn.onclick=async()=>{els.createExportBtn.disabled=true;try{await api('export_create',{method:'POST'});showStatus(tr('packageReady'),'success');await loadExports();}catch(e){showStatus(e.message,'error');}finally{els.createExportBtn.disabled=false;}};
     state.observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting&&state.hasMore)loadCards(true);},{rootMargin:'800px'});state.observer.observe(els.loadSentinel);
   }

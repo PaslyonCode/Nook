@@ -318,12 +318,13 @@
       popover: { Filter: 'Поиск', 'Nothing found': 'Ничего не найдено', 'Convert to': 'Преобразовать в' }
     }, base.messages.ui || {});
     base.messages.toolNames = Object.assign({
-      Text: 'Текст', Heading: 'Заголовок', List: 'Список', Checklist: 'Чек-лист', Quote: 'Цитата', Warning: 'Примечание', Code: 'Код', Delimiter: 'Разделитель', 'Raw HTML': 'HTML', Table: 'Таблица', Embed: 'Видео / Embed', Link: 'Ссылка', Marker: 'Маркер', Bold: 'Полужирный', Italic: 'Курсив', Underline: 'Подчеркнуть', InlineCode: 'Код в строке'
+      Text: 'Текст', Heading: 'Заголовок', Image: 'Изображение', List: 'Список', Checklist: 'Чек-лист', Quote: 'Цитата', Warning: 'Примечание', Code: 'Код', Delimiter: 'Разделитель', 'Raw HTML': 'HTML', Table: 'Таблица', Embed: 'Видео / Embed', Link: 'Ссылка', Marker: 'Маркер', Bold: 'Полужирный', Italic: 'Курсив', Underline: 'Подчеркнуть', InlineCode: 'Код в строке'
     }, base.messages.toolNames || {});
     base.messages.tools = Object.assign({
       link: { 'Add a link': 'Вставьте ссылку' },
       stub: { 'The block can not be displayed correctly.': 'Блок не может быть отображен корректно.' },
-      header: { 'Heading 1': 'Заголовок 1', 'Heading 2': 'Заголовок 2', 'Heading 3': 'Заголовок 3', 'Heading 4': 'Заголовок 4', 'Heading 5': 'Заголовок 5', 'Heading 6': 'Заголовок 6' }
+      header: { 'Heading 1': 'Заголовок 1', 'Heading 2': 'Заголовок 2', 'Heading 3': 'Заголовок 3', 'Heading 4': 'Заголовок 4', 'Heading 5': 'Заголовок 5', 'Heading 6': 'Заголовок 6' },
+      image: { 'Select an Image': 'Выбрать изображение', Caption: 'Подпись', 'With border': 'С рамкой', 'Stretch image': 'Растянуть', 'With background': 'С фоном', 'Couldn’t upload image. Please try another.': 'Не удалось загрузить изображение.' }
     }, base.messages.tools || {});
     return base;
   }
@@ -336,7 +337,9 @@
 
   function enhanceSurface(editor, cfg) {
     const holder = resolveHolder(cfg.holder);
-    if (!holder || holder.dataset.nookEditorSurfaceReady === '1') return;
+    if (!holder) return;
+    holder.__nookEditorInstance = editor;
+    if (holder.dataset.nookEditorSurfaceReady === '1') return;
     holder.dataset.nookEditorSurfaceReady = '1';
     holder.classList.add('nook-editorjs-full-ready');
     // Clicking the empty area below the last block should focus the last block, exactly
@@ -344,7 +347,7 @@
     holder.addEventListener('pointerdown', (event) => {
       if (event.target.closest('.ce-block,.ce-toolbar,.ce-popover,.ce-inline-toolbar,.ce-settings,button,input,textarea,a')) return;
       requestAnimationFrame(() => {
-        try { editor.caret.setToLastBlock('end'); } catch (_) {}
+        try { holder.__nookEditorInstance.caret.setToLastBlock('end'); } catch (_) {}
       });
     });
   }
